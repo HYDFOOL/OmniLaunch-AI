@@ -201,7 +201,7 @@ export function ProductCard({ product }: { product: DiscoveredProduct }) {
                 <p className="mt-1 text-slate-400">{adAssets.videoScript.cta}</p>
               </div>
             </div>
-          ) : (
+          ) : activeTab === "ads" ? (
             <div className="space-y-3 rounded-lg border border-white/[0.06] bg-black/20 p-3 text-[11px] leading-relaxed">
               <div>
                 <div className="flex items-center justify-between"><span className="font-mono text-[9px] uppercase text-blue-400">Meta ads</span><CopyButton text={`${adAssets.metaAds.primaryText}\n\nHeadline: ${adAssets.metaAds.headline}\n\nKeywords: ${adAssets.metaAds.targetingKeywords.join(", ")}`} label="Copy all" /></div>
@@ -321,21 +321,7 @@ export function ProductCard({ product }: { product: DiscoveredProduct }) {
                 Export Full Custom Theme Configuration
               </Button>
             </div>
-          ) : (
-            <div className="space-y-3 rounded-lg border border-white/[0.06] bg-black/20 p-3 text-[11px] leading-relaxed">
-              <div>
-                <div className="flex items-center justify-between"><span className="font-mono text-[9px] uppercase text-blue-400">Meta ads</span><CopyButton text={`${adAssets.metaAds.primaryText}\n\nHeadline: ${adAssets.metaAds.headline}\n\nKeywords: ${adAssets.metaAds.targetingKeywords.join(", ")}`} label="Copy all" /></div>
-                <p className="mt-1 text-slate-500">{adAssets.metaAds.primaryText}</p>
-                <p className="mt-1 font-medium text-slate-400">{adAssets.metaAds.headline}</p>
-                <div className="mt-1 flex flex-wrap gap-1">{adAssets.metaAds.targetingKeywords.map((kw) => <span key={kw} className="rounded bg-white/[0.05] px-1.5 py-0.5 text-[9px] text-slate-500">{kw}</span>)}</div>
-              </div>
-              <div className="border-t border-white/[0.06] pt-2">
-                <div className="flex items-center justify-between"><span className="font-mono text-[9px] uppercase text-pink-400">TikTok ads</span><CopyButton text={`${adAssets.tiktokAds.caption}\n\n${adAssets.tiktokAds.trendingHashtags.join(" ")}`} label="Copy all" /></div>
-                <p className="mt-1 text-slate-500">{adAssets.tiktokAds.caption}</p>
-                <div className="mt-1 flex flex-wrap gap-1">{adAssets.tiktokAds.trendingHashtags.map((tag) => <span key={tag} className="rounded bg-pink-400/10 px-1.5 py-0.5 text-[9px] text-pink-300">{tag}</span>)}</div>
-              </div>
-            </div>
-          )}
+          ) : null}
         </div>
 
         <Button

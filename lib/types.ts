@@ -118,6 +118,7 @@ export interface AdAssets {
   videoScript: VideoScript;
   metaAds: MetaAdAsset;
   tiktokAds: TikTokAdAsset;
+  customStorefrontBlueprint?: CustomStorefrontBlueprint;
 }
 
 export interface DiscoveredProduct {
